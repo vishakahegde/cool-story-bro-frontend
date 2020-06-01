@@ -8,6 +8,7 @@ import StoryCarousel from "../../components/HomePage/storyCarousel";
 import { fetchPageDetails } from "../../store/homePageDetails/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { selectPageDetails } from "../../store/homePageDetails/selectors";
+import Loading from "../../components/Loading";
 
 export default function StoryDetails() {
   const { id } = useParams();
@@ -19,6 +20,10 @@ export default function StoryDetails() {
   }, [dispatch, id]);
 
   console.log("Page in story details", page);
+
+  if (page.stories === null) {
+    return <Loading />;
+  }
 
   return (
     <div>

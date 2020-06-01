@@ -1,4 +1,14 @@
-const intialState = {};
+const intialState = {
+  id: null,
+  title: null,
+  description: null,
+  backgroundColor: null,
+  color: null,
+  createdAt: null,
+  updatedAt: null,
+  userId: null,
+  stories: null,
+};
 
 export function HomePageDetailsSliceReducer(state = intialState, action) {
   switch (action.type) {
