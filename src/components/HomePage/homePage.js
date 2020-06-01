@@ -12,9 +12,11 @@ export default function HomePage(props) {
     >
       <h2>{props.title}</h2>
       <p>{props.description}</p>
-      <Link to={`/homepages/${props.id}`}>
-        <button>Visit Page</button>
-      </Link>
+      {props.showLink ? (
+        <Link to={`/homepages/${props.id}`}>
+          <button>Visit Page</button>
+        </Link>
+      ) : null}
     </Jumbotron>
   );
 }
