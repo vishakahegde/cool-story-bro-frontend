@@ -5,13 +5,33 @@ import { selectAppLoading } from "../../store/appState/selectors";
 import Loading from "../Loading";
 
 export default function StoryCarousel(props) {
-  console.log("Props", props);
+  console.log("Props page", props.page);
+  console.log("Props page stories", props.page.stories);
   return (
-    <div>
-      <h1>{props.page.title}</h1>
-      {/* {props.page.stories.map((story) => {
-        return <p>{story.title}</p>;
-      })} */}
-    </div>
+    <Carousel className="mt-5">
+      {props.page.stories.map((story) => {
+        return (
+          <Carousel.Item key={story.id}>
+            {story.imageUrl ? (
+              <img
+                className="d-block w-100"
+                src={story.imageUrl}
+                alt={story.name}
+              />
+            ) : null}
+            <Carousel.Caption
+              style={{
+                backgroundColor: `${props.page.backgroundColor}99`,
+                color: props.page.color,
+              }}
+              className="p-5"
+            >
+              <h3>{story.name}</h3>
+              <p>{story.content}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        );
+      })}
+    </Carousel>
   );
 }

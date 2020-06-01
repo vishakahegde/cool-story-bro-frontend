@@ -21,11 +21,11 @@ import StoryDetails from "./pages/HomePages/storyDetails";
 //     <h1>Homepages</h1>
 //   </Jumbotron>
 // );
-const Other = () => (
-  <Jumbotron>
-    <h1>Other</h1>
-  </Jumbotron>
-);
+// const Other = () => (
+//   <Jumbotron>
+//     <h1>Other</h1>
+//   </Jumbotron>
+// );
 
 function App() {
   const dispatch = useDispatch();
