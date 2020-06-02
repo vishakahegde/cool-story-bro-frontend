@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { apiUrl } from "../../config/constants";
 import HomePage from "../../components/HomePage/homePage";
 import { Container } from "react-bootstrap";
 import StoryCarousel from "../../components/HomePage/storyCarousel";
@@ -19,8 +17,6 @@ export default function StoryDetails() {
     dispatch(fetchPageDetails(id));
   }, [dispatch, id]);
 
-  console.log("Page in story details", page);
-
   if (page.stories === null) {
     return <Loading />;
   }
@@ -36,8 +32,9 @@ export default function StoryDetails() {
         color={page.color}
         showLink={false}
       />
-
-      <StoryCarousel page={page} />
+      <Container>
+        <StoryCarousel page={page} />
+      </Container>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Jumbotron } from "react-bootstrap";
 // import { apiUrl } from "../../config/constants";
 // import axios from "axios";
@@ -14,7 +14,6 @@ export default function HomePages() {
   const dispatch = useDispatch();
   const loading = useSelector(selectAppLoading);
   const homePages = useSelector(selectHomePages);
-  console.log("Loading:", loading);
 
   // async function getHomePages() {
   //   const res = await axios.get(`${apiUrl}/homepages`);
@@ -24,7 +23,7 @@ export default function HomePages() {
 
   useEffect(() => {
     dispatch(fetchHomePages());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

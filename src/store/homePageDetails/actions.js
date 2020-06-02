@@ -13,7 +13,6 @@ export const fetchPageDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch(appLoading());
     const res = await axios.get(`${apiUrl}/homepages/${id}`);
-    console.log("Response in thunks:", res.data);
     dispatch(pageDetailFetched(res.data));
     dispatch(appDoneLoading());
   } catch (error) {

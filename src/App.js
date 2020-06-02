@@ -13,7 +13,7 @@ import MyHomepage from "./pages/MyHomepage";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
-import { Jumbotron } from "react-bootstrap";
+// import { Jumbotron } from "react-bootstrap";
 import StoryDetails from "./pages/HomePages/storyDetails";
 
 // const Home = () => (
